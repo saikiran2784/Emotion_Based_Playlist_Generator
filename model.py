@@ -24,7 +24,7 @@ def analyze_emotion(text):
         "anger": "anger",
         "disgust": "anger",
         "fear": "anxiety",
-        "joy": "happy",
+        "joy": "celebration",
         "neutral": "calm",
         "sadness": "sadness",
         "love" : "love"
@@ -33,7 +33,7 @@ def analyze_emotion(text):
     return mapping.get(emotion, emotion)
 
 def get_spotify_search_url(emotion):
-    return f"{SPOTIFY_SEARCH_URL}{emotion}"
+    return f"{SPOTIFY_SEARCH_URL}{emotion} English music playlist"
 
 # FastAPI app definition
 app = FastAPI()
