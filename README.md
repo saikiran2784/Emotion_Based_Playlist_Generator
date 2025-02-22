@@ -49,8 +49,6 @@ The Emotion-Based Playlist Generator is designed to enhance your music listening
    pip install -r requirements.txt
    ```
 
-   *Make sure your `requirements.txt` includes dependencies such as `streamlit`, `fastapi`, `uvicorn`, `transformers`, and any others you are using.*
-
 ## Usage
 
 ### Running the Streamlit App
