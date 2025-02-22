@@ -11,7 +11,6 @@ An interactive application that analyzes your mood from text input and generates
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -42,3 +41,72 @@ The Emotion-Based Playlist Generator is designed to enhance your music listening
    ```bash
    git clone https://github.com/yourusername/emotion-based-playlist-generator.git
    cd emotion-based-playlist-generator
+   ```
+
+2. **Install the required packages:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   *Make sure your `requirements.txt` includes dependencies such as `streamlit`, `fastapi`, `uvicorn`, `transformers`, and any others you are using.*
+
+## Usage
+
+### Running the Streamlit App
+
+To launch the interactive web interface:
+
+```bash
+streamlit run model.py
+```
+
+Once the app is running, enter your mood or thoughts into the text area and click **Generate Playlist** to see the detected emotion and open a corresponding Spotify playlist.
+
+### Running the FastAPI Server
+
+To run the FastAPI API server:
+
+```bash
+uvicorn model:app --reload
+```
+Access the API at `http://127.0.0.1:8000/get_playlist?text=your+input`.
+
+## Project Structure
+
+A typical structure for the repository might look like this:
+
+```
+emotion-based-playlist-generator/
+├── README.md
+├── requirements.txt
+├── model.py         # Contains both Streamlit and FastAPI code
+```
+
+## API Endpoints
+
+- **GET /get_playlist**  
+  - **Description:** Analyzes the provided text to detect the emotion and returns a JSON response with the detected emotion and the corresponding Spotify URL.
+  - **Query Parameter:** `text` – The mood or thought input.
+  - **Response Example:**
+
+    ```json
+    {
+      "text" : "I just got a promotion at work and I'm feeling on top of the world!"
+      "Generated emotion": "happy",
+      "spotify_url": "https://open.spotify.com/search/happy"
+    }
+    ```
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or further information, please contact [saikiran2784@gmail.com](mailto:saikiran2784@gmail.com).
+
+---
+
+*Happy coding and enjoy your personalized music experience!*
